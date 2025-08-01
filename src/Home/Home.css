@@ -1,0 +1,141 @@
+.home-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f3f4f6, #dff6ff);
+  font-family: 'Segoe UI', sans-serif;
+  flex-wrap: wrap;
+  overflow-x: hidden;
+}
+
+.home-content {
+  max-width: 600px;
+  opacity: 0;
+  transform: translateX(-80px);
+  transition: all 1s ease;
+}
+
+.home-image {
+  opacity: 0;
+  transform: translateX(80px);
+  transition: all 1s ease;
+}
+
+.home-content.slide-in-left {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.home-image.slide-in-right {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.home-content h3 {
+  font-size: 26px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.home-content h1 {
+  font-size: 60px;
+  color: #0a0a0a;
+  margin: 0;
+}
+
+.home-content h1 span {
+  color: #ff4d4f;
+  font-weight: bold;
+}
+
+.home-content h2 {
+  font-size: 32px;
+  color: #0f4c75;
+  margin: 10px 0 20px;
+}
+
+.home-content p {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.home-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn-primary, .btn-secondary {
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-primary {
+  background-color: #ff4d4f;
+  color: #fff;
+  border: 2px solid #ff4d4f;
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: #ff4d4f;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #0f4c75;
+  border: 2px solid #0f4c75;
+}
+
+.btn-secondary:hover {
+  background-color: #0f4c75;
+  color: #fff;
+}
+
+.home-image img {
+  width: 380px;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease;
+  border: 5px solid #17bdc6c5;
+}
+
+.home-image img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 50px 20px;
+  }
+
+  .home-image {
+    margin-top: 40px;
+  }
+
+  .home-image img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .home-buttons {
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .btn-primary, .btn-secondary {
+    width: 200px;
+    text-align: center;
+  }
+}
