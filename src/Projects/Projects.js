@@ -3,7 +3,7 @@ import "./Projects.css";
 
 const projectData = [
   {
-    title: "Bekery",
+    title: "Bakery",
     description: "I am create my web page by using html and css .",
     image: "Screenshot 2025-08-01 215520.png",
     link: "https://github.com/22471A05J5/SCT_WD_TASK1",

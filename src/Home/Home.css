@@ -1,8 +1,16 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Home Container */
 .home-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 100px;
+  padding: 100px 10%;
   min-height: 100vh;
   background: linear-gradient(135deg, #f3f4f6, #dff6ff);
   font-family: 'Segoe UI', sans-serif;
@@ -10,16 +18,13 @@
   overflow-x: hidden;
 }
 
+/* Home Content Animations */
 .home-content {
+  flex: 1;
   max-width: 600px;
+  padding-right: 50px;
   opacity: 0;
   transform: translateX(-80px);
-  transition: all 1s ease;
-}
-
-.home-image {
-  opacity: 0;
-  transform: translateX(80px);
   transition: all 1s ease;
 }
 
@@ -28,17 +33,21 @@
   transform: translateX(0);
 }
 
+.home-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transform: translateX(80px);
+  transition: all 1s ease;
+}
+
 .home-image.slide-in-right {
   opacity: 1;
   transform: translateX(0);
 }
 
-.home-content h3 {
-  font-size: 26px;
-  color: #666;
-  margin-bottom: 10px;
-}
-
+/* Typography */
 .home-content h1 {
   font-size: 60px;
   color: #0a0a0a;
@@ -56,6 +65,12 @@
   margin: 10px 0 20px;
 }
 
+.home-content h3 {
+  font-size: 26px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
 .home-content p {
   font-size: 18px;
   color: #333;
@@ -63,12 +78,15 @@
   margin-bottom: 30px;
 }
 
+/* Buttons */
 .home-buttons {
   display: flex;
-  gap: 15px;
+  gap: 20px;
+  margin-top: 30px;
 }
 
-.btn-primary, .btn-secondary {
+.btn-primary,
+.btn-secondary {
   text-decoration: none;
   padding: 12px 24px;
   border-radius: 25px;
@@ -98,26 +116,61 @@
   color: #fff;
 }
 
+/* Image Styling */
 .home-image img {
   width: 380px;
   height: 380px;
   object-fit: cover;
   border-radius: 50%;
+  border: 5px solid #17bdc6c5;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   transition: transform 0.4s ease;
-  border: 5px solid #17bdc6c5;
 }
 
 .home-image img:hover {
   transform: scale(1.05);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .home-container {
     flex-direction: column;
     text-align: center;
     padding: 50px 20px;
+  }
+
+  .home-content {
+    padding: 0 10px;
+  }
+
+  .home-content h1 {
+    font-size: 36px;
+  }
+
+  .home-content h2 {
+    font-size: 24px;
+  }
+
+  .home-content h3 {
+    font-size: 20px;
+  }
+
+  .home-content p {
+    font-size: 16px;
+  }
+
+  .home-buttons {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 200px;
+    text-align: center;
+    margin: 0 auto;
   }
 
   .home-image {
@@ -127,15 +180,5 @@
   .home-image img {
     width: 250px;
     height: 250px;
-  }
-
-  .home-buttons {
-    justify-content: center;
-    flex-direction: column;
-  }
-
-  .btn-primary, .btn-secondary {
-    width: 200px;
-    text-align: center;
   }
 }

@@ -1,20 +1,24 @@
-/* Reset default styles */
+/* Reset styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Header container */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #111;
-  padding: 20px 40px;
+  background-color: #121212;
+  padding: 15px 30px;
+  position: relative;
   color: white;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  z-index: 10;
 }
 
+/* Logo */
 .logo {
   font-size: 28px;
   font-weight: bold;
@@ -23,7 +27,44 @@ header {
 }
 
 .logo span {
-  color: #00bcd4;
+  color: #ff4081;
+}
+
+/* Hamburger menu icon */
+.menu-icon {
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu-icon .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+/* Cross animation on open */
+.menu-icon.open .bar:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+.menu-icon.open .bar:nth-child(2) {
+  opacity: 0;
+}
+.menu-icon.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* Nav container */
+.nav {
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
 }
 
 .nav_links {
@@ -32,6 +73,7 @@ header {
   gap: 30px;
 }
 
+/* Nav links */
 .nav_links li a {
   text-decoration: none;
   color: white;
@@ -60,27 +102,61 @@ header {
   width: 100%;
 }
 
-/* Responsive design */
+/* Responsive - Mobile */
 @media (max-width: 768px) {
-  header {
+  .menu-icon {
+    display: flex;
+  }
+
+  .nav {
+    position: absolute;
+    top: 65px;
+    right: 30px;
+    background-color: #222;
+    border-radius: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 99;
     flex-direction: column;
     align-items: flex-start;
   }
 
+  .nav.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
   .nav_links {
     flex-direction: column;
-    width: 100%;
-    margin-top: 10px;
+    padding: 15px 20px;
+    gap: 12px;
+    width: 200px;
   }
 
   .nav_links li {
     width: 100%;
+    text-align: left;
   }
 
   .nav_links li a {
     display: block;
-    padding: 10px 0;
-    width:100%;
+    width: 100%;
+    padding: 10px 10px;
+    background-color: transparent;
+    border-radius: 6px;
+  }
 
+  .nav_links li a:hover {
+    background-color: #ff4081;
+    color: white;
+  }
+
+  .nav_links li a::after {
+    display: none;
   }
 }
+
+/* ✅ Removed the hover-based open/close styles */

@@ -1,6 +1,14 @@
 // src/About.js
 import React, { useEffect, useRef } from "react";
 import "./About.css";
+import {
+  FaBehance,
+  FaDribbble,
+  FaXTwitter,
+  FaInstagram,
+  FaLinkedinIn,
+} from "react-icons/fa6";
+
 
 export default function About() {
   const textRef = useRef(null);
@@ -23,32 +31,32 @@ export default function About() {
   }, []);
 
   return (
-    <section className="about-section">
-      <h2 className="about-title">About Me</h2>
-      <div className="underline"></div>
-
-      <div className="about-content">
-        <div className="about-image slide-right" ref={imageRef}>
+    <section className="about-section" id="about">
+      <div className="about-container">
+        <div className="about-image" ref={imageRef}>
           <img src="/siri.jpg" alt="Sirisha" />
         </div>
-        <div className="about-text slide-left" ref={textRef}>
+
+        <div className="about-text" ref={textRef}>
+          <h2 className="about-heading">ABOUT ME</h2>
+          <h3 className="about-role"><span>Sirisha</span> - Frontend Developer</h3>
           <p>
-            Hello! I'm <span className="highlight">Sirisha</span>, a passionate frontend developer who loves building
-            modern, responsive websites and apps. I specialize in <span className="highlight">React.js</span>, and enjoy
-            working with <span className="highlight">CSS animations</span>, <span className="highlight">JavaScript</span>, and
-            <span className="highlight"> UI design</span>.
+            I’m a passionate frontend developer who creates elegant and user-friendly websites.
+            I love working with <strong>React.js</strong>, <strong>CSS animations</strong>, and clean UI/UX design.
           </p>
           <p>
-            I completed my degree in <span className="highlight">Computer Science</span>, and have built several projects
-            including portfolios, e-commerce apps, and more. I'm always eager to learn and grow in the world of web
-            development.
+            With a background in <strong>Computer Science</strong>, I’ve built various projects including responsive
+            portfolios, e-commerce platforms, and dynamic SPAs. Always eager to learn and grow in the tech space.
           </p>
-          <ul className="about-details">
-            <li><strong>Name:</strong> Sirisha</li>
-            <li><strong>Location:</strong> Hyderabad, India</li>
-            <li><strong>Email:</strong> sirisha@example.com</li>
-            <li><strong>Skills:</strong> React.js, JavaScript, HTML5, CSS3, Git, Firebase</li>
-          </ul>
+
+            <div className="social-icons">
+              <a href="https://www.behance.net/" target="_blank" rel="noreferrer"><FaBehance /></a>
+              <a href="https://dribbble.com/" target="_blank" rel="noreferrer"><FaDribbble /></a>
+              <a href="https://twitter.com/" target="_blank" rel="noreferrer"><FaXTwitter /></a>
+              <a href="https://www.instagram.com/" target="_blank" rel="noreferrer"><FaInstagram /></a>
+              <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer"><FaLinkedinIn /></a>
+            </div>
+
         </div>
       </div>
     </section>
